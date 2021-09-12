@@ -1,0 +1,6 @@
+.deno_plugins
+.vscode
+.idea
+cov_profile
+.env.local
+local_lock.json
