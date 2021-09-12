@@ -1,9 +1,10 @@
-import { Application, Router } from "../deps.ts";
+import { Application, oakCors, Router } from "../deps.ts";
 import configs from "./config/config.ts";
 
 import router from "./routers/route.ts";
 
 const app: Application = new Application();
+app.use(oakCors());
 await start(app);
 
 async function start(app: Application) {
@@ -25,5 +26,9 @@ async function setupListener(
   hostname: string,
   port: number,
 ) {
-  await app.listen({ hostname, port });
+  if (import.meta.main) {
+    await app.listen({ hostname, port });
+  }
 }
+
+export default app;

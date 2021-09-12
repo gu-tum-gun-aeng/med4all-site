@@ -2,10 +2,7 @@ import { Router, Status } from "../../deps.ts";
 import type { RouterContext } from "../../deps.ts";
 
 const router = new Router();
-
 setRoute(router);
-
-export default router;
 
 function setRoute(router: Router) {
   router.get(
@@ -18,3 +15,5 @@ function setRoute(router: Router) {
 
   router.redirect("/atk-report", "https://form.typeform.com/to/NifmjUcB");
 }
+
+export default router;
