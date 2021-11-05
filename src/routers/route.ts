@@ -14,6 +14,12 @@ function setRoute(router: Router) {
   );
 
   router.redirect("/atk-report", "https://form.typeform.com/to/NifmjUcB");
+
+  router.get("/research/:id/:longform/:day", (context) => {
+    const toRedirect = `https://form.typeform.com/to/aiBuprQ7#id_card=${context.params.id}&long_form=${context.params.longform}&day=${context.params.day}`;
+
+    context.response.redirect(new URL(toRedirect))
+  });
 }
 
 export default router;
